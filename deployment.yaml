@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: argo-doom
+  name: argo-doom
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: argo-doom
+  template:
+    metadata:
+      labels:
+        app: argo-doom
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
